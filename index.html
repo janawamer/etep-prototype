@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ETEP — Egypt Tourism Excursion Portal</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --sand:    #F5EFE0;
@@ -493,19 +493,52 @@
     .kpi-grid { grid-template-columns: 1fr 1fr; }
     .admin-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── RTL / Arabic support ── */
+  [lang="ar"] body,
+  body.ar {
+    font-family: 'Noto Naskh Arabic', 'DM Sans', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  body.ar nav { flex-direction: row-reverse; }
+  body.ar .nav-tabs { flex-direction: row-reverse; }
+  body.ar .hero-content { padding: 0 80px 0 0; }
+  body.ar .hero-right  { left: 0; right: auto; }
+  body.ar .hero-stats  { left: auto; right: 80px; }
+  body.ar .filters-bar { flex-direction: row-reverse; }
+  body.ar .tile-footer { flex-direction: row-reverse; }
+  body.ar .tile-meta   { flex-direction: row-reverse; }
+  body.ar .booking-layout { direction: rtl; }
+  body.ar .form-grid   { direction: rtl; }
+  body.ar .steps-bar   { flex-direction: row-reverse; }
+  body.ar .guide-filters { flex-direction: row-reverse; }
+  body.ar .admin-layout { direction: rtl; }
+  body.ar .admin-topbar { flex-direction: row-reverse; }
+  body.ar .kpi-grid    { direction: rtl; }
+  body.ar .admin-grid  { direction: rtl; }
+  body.ar .admin-card-header { flex-direction: row-reverse; }
+  body.ar .bookings-table th,
+  body.ar .bookings-table td { text-align: right; }
+  body.ar .summary-row { flex-direction: row-reverse; }
+  body.ar .summary-total { flex-direction: row-reverse; }
+  body.ar .aside-title { text-align: right; }
+  body.ar .page-header { text-align: right; }
+  body.ar .guide-layout { text-align: right; }
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">ETEP <span>/ Egypt Tourism Excursion Portal</span></div>
+  <div class="nav-logo"><span data-de="ETEP" data-ar="بوابة ETEP">ETEP</span> <span data-de="/ Egypt Tourism Excursion Portal" data-ar="/ البوابة السياحية المصرية">/ Egypt Tourism Excursion Portal</span></div>
   <div class="nav-tabs">
-    <button class="nav-tab active" onclick="showScreen('home')">Home</button>
-    <button class="nav-tab" onclick="showScreen('catalogue')">Excursions</button>
-    <button class="nav-tab" onclick="showScreen('booking')">Book</button>
-    <button class="nav-tab" onclick="showScreen('guides')">Guides</button>
-    <button class="nav-tab" onclick="showScreen('admin')">Admin</button>
+    <button class="nav-tab active" onclick="showScreen('home')"><span data-de="Home" data-ar="الرئيسية">Home</span></button>
+    <button class="nav-tab" onclick="showScreen('catalogue')"><span data-de="Excursions" data-ar="الرحلات">Excursions</span></button>
+    <button class="nav-tab" onclick="showScreen('booking')"><span data-de="Book" data-ar="احجز">Book</span></button>
+    <button class="nav-tab" onclick="showScreen('guides')"><span data-de="Guides" data-ar="المرشدون">Guides</span></button>
+    <button class="nav-tab" onclick="showScreen('admin')"><span data-de="Admin" data-ar="الإدارة">Admin</span></button>
   </div>
   <div class="lang-toggle">
     <button class="lang-btn active" id="lang-de" onclick="setLang('de')">DE</button>
@@ -518,43 +551,43 @@
   <div class="hero">
     <div class="hero-pattern"></div>
     <div class="hero-content">
-      <div class="hero-tag">Ministry of Tourism — Official Portal</div>
-      <h1>Discover<br><em>Timeless</em><br>Egypt</h1>
-      <p class="hero-sub">The official bilingual portal for German tour groups to book certified guided excursions across Egypt's most iconic cultural and historical destinations.</p>
+      <div class="hero-tag"><span data-de="Ministry of Tourism — Official Portal" data-ar="وزارة السياحة — البوابة الرسمية">Ministry of Tourism — Official Portal</span></div>
+      <h1><span data-de="Discover" data-ar="اكتشف">Discover</span><br><em><span data-de="Timeless" data-ar="خالد">Timeless</span></em><br><span data-de="Egypt" data-ar="مصر">Egypt</span></h1>
+      <p class="hero-sub"><span data-de="The official bilingual portal for German tour groups to book certified guided excursions across Egypt's most iconic cultural and historical destinations." data-ar="البوابة الرسمية ثنائية اللغة لمجموعات السياحة الألمانية لحجز الرحلات المصحوبة بمرشدين معتمدين عبر أبرز المواقع الثقافية والتاريخية في مصر.">The official bilingual portal for German tour groups to book certified guided excursions across Egypt's most iconic cultural and historical destinations.</span></p>
       <div class="hero-ctas">
-        <button class="btn-primary" onclick="showScreen('catalogue')">Browse Excursions</button>
-        <button class="btn-outline" onclick="showScreen('booking')">Book a Group Tour</button>
+        <button class="btn-primary" onclick="showScreen('catalogue')"><span data-de="Browse Excursions" data-ar="تصفح الرحلات">Browse Excursions</span></button>
+        <button class="btn-outline" onclick="showScreen('booking')"><span data-de="Book a Group Tour" data-ar="احجز رحلة جماعية">Book a Group Tour</span></button>
       </div>
     </div>
     <div class="hero-right">
       <div class="dest-card">
         <div class="dest-icon">🏛️</div>
-        <h4>Pyramids of Giza</h4>
-        <p>Cairo Region</p>
+        <h4><span data-de="Pyramids of Giza" data-ar="أهرامات الجيزة">Pyramids of Giza</span></h4>
+        <p><span data-de="Cairo Region" data-ar="منطقة القاهرة">Cairo Region</span></p>
       </div>
       <div class="dest-card">
         <div class="dest-icon">⛵</div>
-        <h4>Nile Luxor Cruise</h4>
-        <p>Upper Egypt</p>
+        <h4><span data-de="Nile Luxor Cruise" data-ar="رحلة نيلية للأقصر">Nile Luxor Cruise</span></h4>
+        <p><span data-de="Upper Egypt" data-ar="صعيد مصر">Upper Egypt</span></p>
       </div>
       <div class="dest-card">
         <div class="dest-icon">🗿</div>
-        <h4>Abu Simbel</h4>
-        <p>Nubian Heritage</p>
+        <h4><span data-de="Abu Simbel" data-ar="أبو سمبل">Abu Simbel</span></h4>
+        <p><span data-de="Nubian Heritage" data-ar="التراث النوبي">Nubian Heritage</span></p>
       </div>
     </div>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">15+</div>
-        <div class="stat-label">Destinations</div>
+        <div class="stat-label"><span data-de="Destinations" data-ar="وجهات">Destinations</span></div>
       </div>
       <div class="stat">
         <div class="stat-num">20+</div>
-        <div class="stat-label">Certified Guides</div>
+        <div class="stat-label"><span data-de="Certified Guides" data-ar="مرشدون معتمدون">Certified Guides</span></div>
       </div>
       <div class="stat">
         <div class="stat-num">2</div>
-        <div class="stat-label">Languages (AR / DE)</div>
+        <div class="stat-label"><span data-de="Languages (AR / DE)" data-ar="اللغات (ع / د)">Languages (AR / DE)</span></div>
       </div>
     </div>
   </div>
@@ -563,12 +596,12 @@
 <!-- ── SCREEN 2: CATALOGUE ── -->
 <div class="screen" id="screen-catalogue">
   <div class="page-header">
-    <h2>Excursion <em>Catalogue</em></h2>
+    <h2><span data-de="Excursion" data-ar="كتالوج">Excursion</span> <em><span data-de="Catalogue" data-ar="الرحلات">Catalogue</span></em></h2>
     <p>Browse all certified group tours across Egypt — pricing in EUR & EGP</p>
   </div>
   <div class="filters-bar">
     <span class="filter-label">Filter:</span>
-    <button class="filter-chip active" onclick="filterChip(this)">All Regions</button>
+    <button class="filter-chip active" onclick="filterChip(this)"><span data-de="All Regions" data-ar="كل المناطق">All Regions</span></button>
     <button class="filter-chip" onclick="filterChip(this)">Cairo</button>
     <button class="filter-chip" onclick="filterChip(this)">Luxor</button>
     <button class="filter-chip" onclick="filterChip(this)">Aswan</button>
@@ -581,20 +614,20 @@
       <div class="tile-img" style="background:linear-gradient(135deg,#C8963E22,#C4613A22);">
         🏛️
         <div class="tile-img-overlay"></div>
-        <div class="tile-badge">Most Popular</div>
+        <div class="tile-badge"><span data-de="Most Popular" data-ar="الأكثر شعبية">Most Popular</span></div>
       </div>
       <div class="tile-body">
         <div class="tile-region">Cairo Region</div>
         <h3>Pyramids of Giza & Sphinx</h3>
-        <p>Full-day certified guided tour of the Great Pyramids, Sphinx, and Pyramid of Khafre with bilingual commentary.</p>
+        <p><span data-de="Full-day certified guided tour of the Great Pyramids, Sphinx, and Pyramid of Khafre with bilingual commentary." data-ar="جولة إرشادية معتمدة طوال اليوم في الأهرامات الكبرى وأبو الهول وهرم خفرع مع تعليق بلغتين.">Full-day certified guided tour of the Great Pyramids, Sphinx, and Pyramid of Khafre with bilingual commentary.</span></p>
         <div class="tile-meta">
-          <div class="tile-meta-item">👥 <strong>Max 30</strong> guests</div>
-          <div class="tile-meta-item">⏱ <strong>8 hrs</strong></div>
+          <div class="tile-meta-item">👥 <strong><span data-de="Max 30" data-ar="الحد الأقصى 30">Max 30</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="8 hrs" data-ar="٨ ساعات">8 hrs</span></strong></div>
           <div class="tile-meta-item">⭐ <strong>4.8</strong></div>
         </div>
         <div class="tile-footer">
-          <div class="price">€85 <span>/ person</span></div>
-          <button class="btn-sm" onclick="event.stopPropagation();showScreen('booking')">Book Now</button>
+          <div class="price">€85 <span><span data-de="/ person" data-ar="/ للشخص">/ person</span></span></div>
+          <button class="btn-sm" onclick="event.stopPropagation();showScreen('booking')"><span data-de="Book Now" data-ar="احجز الآن">Book Now</span></button>
         </div>
       </div>
     </div>
@@ -607,10 +640,10 @@
       <div class="tile-body">
         <div class="tile-region">Luxor</div>
         <h3>Luxor Temple & Karnak</h3>
-        <p>Two-site guided journey through the ancient temples of Luxor and the magnificent Karnak complex.</p>
+        <p><span data-de="Two-site guided journey through the ancient temples of Luxor and the magnificent Karnak complex." data-ar="رحلة إرشادية عبر معابد الأقصر القديمة والمجمع الرائع للكرنك.">Two-site guided journey through the ancient temples of Luxor and the magnificent Karnak complex.</span></p>
         <div class="tile-meta">
-          <div class="tile-meta-item">👥 <strong>Max 25</strong> guests</div>
-          <div class="tile-meta-item">⏱ <strong>6 hrs</strong></div>
+          <div class="tile-meta-item">👥 <strong><span data-de="Max 25" data-ar="الحد الأقصى 25">Max 25</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="6 hrs" data-ar="٦ ساعات">6 hrs</span></strong></div>
           <div class="tile-meta-item">⭐ <strong>4.7</strong></div>
         </div>
         <div class="tile-footer">
@@ -620,19 +653,19 @@
       </div>
     </div>
 
-    <div class="dest-tile" onclick="selectTour('Valley of the Kings')">
+    <div class="dest-tile" onclick="selectTour('<span data-de="Valley of the Kings" data-ar="وادي الملوك">Valley of the Kings</span>')">
       <div class="tile-img" style="background:linear-gradient(135deg,#C4613A22,#1A120822);">
         👑
         <div class="tile-img-overlay"></div>
         <div class="tile-badge" style="background:var(--terr);color:white;">New</div>
       </div>
       <div class="tile-body">
-        <div class="tile-region">Luxor — West Bank</div>
+        <div class="tile-region"><span data-de="Luxor — West Bank" data-ar="الأقصر — الضفة الغربية">Luxor — West Bank</span></div>
         <h3>Valley of the Kings</h3>
-        <p>Explore the royal tombs of pharaohs including Tutankhamun and Ramesses II with expert guide commentary.</p>
+        <p><span data-de="Explore the royal tombs of pharaohs including Tutankhamun and Ramesses II with expert guide commentary." data-ar="استكشف مقابر الفراعنة الملكية بما فيها توت عنخ آمون ورمسيس الثاني مع تعليق مرشد خبير.">Explore the royal tombs of pharaohs including Tutankhamun and Ramesses II with expert guide commentary.</span></p>
         <div class="tile-meta">
-          <div class="tile-meta-item">👥 <strong>Max 20</strong> guests</div>
-          <div class="tile-meta-item">⏱ <strong>5 hrs</strong></div>
+          <div class="tile-meta-item">👥 <strong><span data-de="Max 20" data-ar="الحد الأقصى 20">Max 20</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="5 hrs" data-ar="٥ ساعات">5 hrs</span></strong></div>
           <div class="tile-meta-item">⭐ <strong>4.9</strong></div>
         </div>
         <div class="tile-footer">
@@ -649,11 +682,11 @@
       </div>
       <div class="tile-body">
         <div class="tile-region">Aswan</div>
-        <h3>Abu Simbel Temples</h3>
-        <p>UNESCO World Heritage site — twin rock-cut temples of Ramesses II relocated to escape the Nile flood.</p>
+        <h3><span data-de="Abu Simbel Temples" data-ar="معابد أبو سمبل">Abu Simbel Temples</span></h3>
+        <p><span data-de="UNESCO World Heritage site — twin rock-cut temples of Ramesses II relocated to escape the Nile flood." data-ar="موقع تراث عالمي لليونسكو — معبدان منحوتان في الصخر لرمسيس الثاني تم نقلهما من فيضان النيل.">UNESCO World Heritage site — twin rock-cut temples of Ramesses II relocated to escape the Nile flood.</span></p>
         <div class="tile-meta">
-          <div class="tile-meta-item">👥 <strong>Max 35</strong> guests</div>
-          <div class="tile-meta-item">⏱ <strong>Full day</strong></div>
+          <div class="tile-meta-item">👥 <strong><span data-de="Max 35" data-ar="الحد الأقصى 35">Max 35</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="Full day" data-ar="يوم كامل">Full day</span></strong></div>
           <div class="tile-meta-item">⭐ <strong>4.9</strong></div>
         </div>
         <div class="tile-footer">
@@ -671,10 +704,10 @@
       <div class="tile-body">
         <div class="tile-region">Cairo</div>
         <h3>Egyptian Museum & Cairo Citadel</h3>
-        <p>The Egyptian Museum houses the world's largest collection of pharaonic antiquities, followed by the medieval Citadel.</p>
+        <p><span data-de="The Egyptian Museum houses the world's largest collection of pharaonic antiquities, followed by the medieval Citadel." data-ar="يضم المتحف المصري أكبر مجموعة من الآثار الفرعونية في العالم، يعقبها قلعة القاهرة الأثرية.">The Egyptian Museum houses the world's largest collection of pharaonic antiquities, followed by the medieval Citadel.</span></p>
         <div class="tile-meta">
           <div class="tile-meta-item">👥 <strong>Max 30</strong> guests</div>
-          <div class="tile-meta-item">⏱ <strong>7 hrs</strong></div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="7 hrs" data-ar="٧ ساعات">7 hrs</span></strong></div>
           <div class="tile-meta-item">⭐ <strong>4.6</strong></div>
         </div>
         <div class="tile-footer">
@@ -691,11 +724,11 @@
       </div>
       <div class="tile-body">
         <div class="tile-region">Alexandria</div>
-        <h3>Alexandria Heritage Trail</h3>
-        <p>Catacombs of Kom el-Shoqafa, Pompey's Pillar, and the stunning Bibliotheca Alexandrina on the Mediterranean coast.</p>
+        <h3><span data-de="Alexandria Heritage Trail" data-ar="مسار تراث الإسكندرية">Alexandria Heritage Trail</span></h3>
+        <p><span data-de="Catacombs of Kom el-Shoqafa, Pompey's Pillar, and the stunning Bibliotheca Alexandrina on the Mediterranean coast." data-ar="مقابر كوم الشقافة وعمود بومبي ومكتبة الإسكندرية الرائعة على ساحل البحر المتوسط.">Catacombs of Kom el-Shoqafa, Pompey's Pillar, and the stunning Bibliotheca Alexandrina on the Mediterranean coast.</span></p>
         <div class="tile-meta">
           <div class="tile-meta-item">👥 <strong>Max 25</strong> guests</div>
-          <div class="tile-meta-item">⏱ <strong>9 hrs</strong></div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="9 hrs" data-ar="٩ ساعات">9 hrs</span></strong></div>
           <div class="tile-meta-item">⭐ <strong>4.5</strong></div>
         </div>
         <div class="tile-footer">
@@ -715,11 +748,11 @@
       <div class="steps-bar">
         <div class="step done">
           <div class="step-num">✓</div>
-          <div class="step-label">Select Tour</div>
+          <div class="step-label"><span data-de="Select Tour" data-ar="اختر الرحلة">Select Tour</span></div>
         </div>
         <div class="step active">
           <div class="step-num">2</div>
-          <div class="step-label">Group Details</div>
+          <div class="step-label"><span data-de="Group Details" data-ar="بيانات المجموعة">Group Details</span></div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
@@ -727,41 +760,41 @@
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <div class="step-label">Payment</div>
+          <div class="step-label"><span data-de="Payment" data-ar="الدفع">Payment</span></div>
         </div>
         <div class="step">
           <div class="step-num">5</div>
-          <div class="step-label">Confirmation</div>
+          <div class="step-label"><span data-de="Confirmation" data-ar="التأكيد">Confirmation</span></div>
         </div>
       </div>
 
       <div class="form-section">
-        <h3>Tour Operator / Group Leader Details</h3>
+        <h3><span data-de="Tour Operator / Group Leader Details" data-ar="بيانات مشغل الجولات / قائد المجموعة">Tour Operator / Group Leader Details</span></h3>
         <div class="form-grid">
           <div class="form-group">
-            <label>Company / Agency Name</label>
+            <label><span data-de="Company / Agency Name" data-ar="اسم الشركة / الوكالة">Company / Agency Name</span></label>
             <input type="text" placeholder="e.g. Müller Reisen GmbH" value="Müller Reisen GmbH">
           </div>
           <div class="form-group">
-            <label>Group Leader Full Name</label>
+            <label><span data-de="Group Leader Full Name" data-ar="الاسم الكامل لقائد المجموعة">Group Leader Full Name</span></label>
             <input type="text" placeholder="Full name" value="Hans Weber">
           </div>
           <div class="form-group">
-            <label>Email Address</label>
+            <label><span data-de="Email Address" data-ar="البريد الإلكتروني">Email Address</span></label>
             <input type="email" placeholder="email@company.de" value="h.weber@mullerreisen.de">
           </div>
           <div class="form-group">
-            <label>Phone Number</label>
+            <label><span data-de="Phone Number" data-ar="رقم الهاتف">Phone Number</span></label>
             <input type="text" placeholder="+49..." value="+49 30 8874 2200">
           </div>
         </div>
       </div>
 
       <div class="form-section">
-        <h3>Group Information</h3>
+        <h3><span data-de="Group Information" data-ar="معلومات المجموعة">Group Information</span></h3>
         <div class="form-grid">
           <div class="form-group">
-            <label>Selected Excursion</label>
+            <label><span data-de="Selected Excursion" data-ar="الرحلة المختارة">Selected Excursion</span></label>
             <select id="excursion-select">
               <option value="pyramids" selected>Pyramids of Giza & Sphinx</option>
               <option value="luxor">Luxor Temple & Karnak</option>
@@ -772,18 +805,18 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Number of Participants</label>
+            <label><span data-de="Number of Participants" data-ar="عدد المشاركين">Number of Participants</span></label>
             <input type="number" value="18" min="2" max="35" id="num-participants" oninput="updateSummary()">
           </div>
           <div class="form-group full">
-            <label>Special Requirements / Accessibility Notes</label>
+            <label><span data-de="Special Requirements / Accessibility Notes" data-ar="المتطلبات الخاصة / ملاحظات الإتاحة">Special Requirements / Accessibility Notes</span></label>
             <textarea placeholder="e.g. 2 wheelchair users, vegetarian catering needed...">Group includes 2 elderly participants — please ensure moderate walking pace.</textarea>
           </div>
         </div>
       </div>
 
       <div class="form-section">
-        <h3>Select Preferred Date</h3>
+        <h3><span data-de="Select Preferred Date" data-ar="اختر التاريخ المفضل">Select Preferred Date</span></h3>
         <div class="date-grid">
           <div class="cal-header">Mo</div><div class="cal-header">Di</div><div class="cal-header">Mi</div>
           <div class="cal-header">Do</div><div class="cal-header">Fr</div><div class="cal-header">Sa</div>
@@ -820,7 +853,7 @@
     </div>
 
     <div class="booking-aside">
-      <div class="aside-title">Booking <em>Summary</em></div>
+      <div class="aside-title"><span data-de="Booking" data-ar="ملخص">Booking</span> <em><span data-de="Summary" data-ar="الحجز">Summary</span></em></div>
       <div class="summary-row">
         <span class="key">Excursion</span>
         <span class="val" id="sum-tour">Pyramids of Giza & Sphinx</span>
@@ -831,15 +864,15 @@
       </div>
       <div class="summary-row">
         <span class="key">Duration</span>
-        <span class="val">8 hours (full day)</span>
+        <span class="val"><span data-de="8 hours (full day)" data-ar="٨ ساعات (يوم كامل)">8 hours (full day)</span></span>
       </div>
       <div class="summary-row">
         <span class="key">Date</span>
-        <span class="val" id="sum-date">December 11, 2026</span>
+        <span class="val" id="sum-date"><span data-de="December 11, 2026" data-ar="١١ ديسمبر ٢٠٢٦">December 11, 2026</span></span>
       </div>
       <div class="summary-row">
         <span class="key">Group Size</span>
-        <span class="val" id="sum-size">18 participants</span>
+        <span class="val" id="sum-size"><span data-de="18 participants" data-ar="١٨ مشاركاً">18 participants</span></span>
       </div>
       <div class="summary-row">
         <span class="key">Rate per Person</span>
@@ -850,7 +883,7 @@
         <span class="key">Total</span>
         <span class="val" id="sum-total">€1,530</span>
       </div>
-      <p class="aside-note">≈ EGP 83,000 at current exchange rate. Payment accepted in EUR or EGP. PCI-DSS secured.</p>
+      <p class="aside-note"><span data-de="≈ EGP 83,000 at current exchange rate. Payment accepted in EUR or EGP. PCI-DSS secured." data-ar="≈ ٨٣٬٠٠٠ جنيه مصري بسعر الصرف الحالي. يُقبل الدفع باليورو أو الجنيه المصري. مؤمَّن بمعيار PCI-DSS.">≈ EGP 83,000 at current exchange rate. Payment accepted in EUR or EGP. PCI-DSS secured.</span></p>
       <hr class="summary-divider">
       <div class="summary-row">
         <span class="key">Guide Language</span>
@@ -862,7 +895,7 @@
       </div>
       <div class="summary-row">
         <span class="key">Confirmation</span>
-        <span class="val">Email + SMS within 10 min</span>
+        <span class="val"><span data-de="Email + SMS within 10 min" data-ar="بريد إلكتروني + رسالة نصية خلال ١٠ دقائق">Email + SMS within 10 min</span></span>
       </div>
     </div>
   </div>
@@ -871,14 +904,14 @@
 <!-- ── SCREEN 4: GUIDES ── -->
 <div class="screen" id="screen-guides">
   <div class="guide-layout">
-    <h2>Assign a Certified <em>Guide</em></h2>
-    <p>All guides are Ministry-certified and speak German fluently. Filter by specialisation or availability.</p>
+    <h2><span data-de="Assign a Certified" data-ar="اختر مرشداً">Assign a Certified</span> <em><span data-de="Guide" data-ar="معتمداً">Guide</span></em></h2>
+    <p><span data-de="All guides are Ministry-certified and speak German fluently. Filter by specialisation or availability." data-ar="جميع المرشدين معتمدون من وزارة السياحة ويتحدثون الألمانية بطلاقة. صفّـِّل حسب التخصص أو التوفر.">All guides are Ministry-certified and speak German fluently. Filter by specialisation or availability.</span></p>
     <div class="guide-filters">
-      <button class="filter-chip active" onclick="filterChip(this)">All Guides</button>
-      <button class="filter-chip" onclick="filterChip(this)">Pharaonic History</button>
-      <button class="filter-chip" onclick="filterChip(this)">Islamic Cairo</button>
+      <button class="filter-chip active" onclick="filterChip(this)"><span data-de="All Guides" data-ar="كل المرشدين">All Guides</span></button>
+      <button class="filter-chip" onclick="filterChip(this)"><span data-de="Pharaonic History" data-ar="التاريخ الفرعوني">Pharaonic History</span></button>
+      <button class="filter-chip" onclick="filterChip(this)"><span data-de="Islamic Cairo" data-ar="القاهرة الإسلامية">Islamic Cairo</span></button>
       <button class="filter-chip" onclick="filterChip(this)">Nubian Heritage</button>
-      <button class="filter-chip" onclick="filterChip(this)">Available Dec 11</button>
+      <button class="filter-chip" onclick="filterChip(this)"><span data-de="Available Dec 11" data-ar="متاح ١١ ديسمبر">Available Dec 11</span></button>
     </div>
     <div class="guides-grid">
 
@@ -892,7 +925,7 @@
           <span class="lang-tag">🇪🇬 AR</span>
         </div>
         <div class="guide-rating">★★★★★ <span>(127 reviews)</span></div>
-        <div class="guide-avail">✓ Available Dec 11</div>
+        <div class="guide-avail"><span data-de="✓ Available Dec 11" data-ar="✓ متاح ١١ ديسمبر">✓ Available Dec 11</span></div>
         <div class="guide-cert">Cert. #MOT-2024-0042</div>
         <button class="guide-select-btn">✓ Selected</button>
       </div>
@@ -909,7 +942,7 @@
         <div class="guide-rating">★★★★★ <span>(89 reviews)</span></div>
         <div class="guide-avail">✓ Available Dec 11</div>
         <div class="guide-cert">Cert. #MOT-2023-0188</div>
-        <button class="guide-select-btn">Select Guide</button>
+        <button class="guide-select-btn"><span data-de="Select Guide" data-ar="اختر المرشد">Select Guide</span></button>
       </div>
 
       <div class="guide-card" onclick="selectGuide(this)">
@@ -922,7 +955,7 @@
           <span class="lang-tag">🇪🇬 AR</span>
         </div>
         <div class="guide-rating">★★★★☆ <span>(64 reviews)</span></div>
-        <div class="guide-avail" style="color:var(--terr);">✗ Unavailable Dec 11</div>
+        <div class="guide-avail" style="color:var(--terr);"><span data-de="✗ Unavailable Dec 11" data-ar="✗ غير متاح ١١ ديسمبر">✗ Unavailable Dec 11</span></div>
         <div class="guide-cert">Cert. #MOT-2024-0091</div>
         <button class="guide-select-btn">Select Guide</button>
       </div>
@@ -971,45 +1004,45 @@
     <div class="admin-main">
       <div class="admin-topbar">
         <div>
-          <h2>Admin <em>Dashboard</em></h2>
-          <div class="admin-date">Ministry of Tourism — ETEP Operations Centre</div>
+          <h2><span data-de="Admin" data-ar="لوحة">Admin</span> <em><span data-de="Dashboard" data-ar="التحكم"><span data-de="Dashboard" data-ar="لوحة التحكم">Dashboard</span></span></em></h2>
+          <div class="admin-date"><span data-de="Ministry of Tourism — ETEP Operations Centre" data-ar="وزارة السياحة — مركز عمليات ETEP">Ministry of Tourism — ETEP Operations Centre</span></div>
         </div>
-        <button class="btn-primary" onclick="showToast('New booking notification sent!')">+ New Booking</button>
+        <button class="btn-primary" onclick="showToast('New booking notification sent!')"><span data-de="+ New Booking" data-ar="+ حجز جديد">+ New Booking</span></button>
       </div>
 
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-label">Total Bookings</div>
+          <div class="kpi-label"><span data-de="Total Bookings" data-ar="إجمالي الحجوزات">Total Bookings</span></div>
           <div class="kpi-value">58</div>
-          <div class="kpi-change up">↑ 12 this month</div>
+          <div class="kpi-change up"><span data-de="↑ 12 this month" data-ar="↑ ١٢ هذا الشهر">↑ 12 this month</span></div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-label">Active Guides</div>
+          <div class="kpi-label"><span data-de="Active Guides" data-ar="المرشدون النشطون">Active Guides</span></div>
           <div class="kpi-value">23</div>
-          <div class="kpi-change up">↑ 3 onboarded</div>
+          <div class="kpi-change up"><span data-de="↑ 3 onboarded" data-ar="↑ ٣ مُدرَجون">↑ 3 onboarded</span></div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-label">Portal Uptime</div>
+          <div class="kpi-label"><span data-de="Portal Uptime" data-ar="وقت تشغيل البوابة">Portal Uptime</span></div>
           <div class="kpi-value">99.7%</div>
-          <div class="kpi-change neutral">30-day rolling</div>
+          <div class="kpi-change neutral"><span data-de="30-day rolling" data-ar="متوسط ٣٠ يوماً">30-day rolling</span></div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-label">Satisfaction Score</div>
+          <div class="kpi-label"><span data-de="Satisfaction Score" data-ar="نقاط الرضا">Satisfaction Score</span></div>
           <div class="kpi-value">4.6</div>
-          <div class="kpi-change up">↑ from 4.4 last month</div>
+          <div class="kpi-change up"><span data-de="↑ from 4.4 last month" data-ar="↑ من ٤٫٤ الشهر الماضي">↑ from 4.4 last month</span></div>
         </div>
       </div>
 
       <div class="admin-grid">
         <div class="admin-card">
           <div class="admin-card-header">
-            <h4>Recent Bookings</h4>
-            <span class="view-all">View all →</span>
+            <h4><span data-de="Recent Bookings" data-ar="الحجوزات الأخيرة">Recent Bookings</span></h4>
+            <span class="view-all"><span data-de="View all →" data-ar="عرض الكل →">View all →</span></span>
           </div>
           <table class="bookings-table">
             <thead>
               <tr>
-                <th>Ref</th><th>Tour Operator</th><th>Excursion</th><th>Date</th><th>Group</th><th>Status</th>
+                <th><span data-de="Ref" data-ar="المرجع">Ref</span></th><th><span data-de="Tour Operator" data-ar="مشغل الجولات">Tour Operator</span></th><th>Excursion</th><th>Date</th><th>Group</th><th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -1019,7 +1052,7 @@
                 <td>Pyramids of Giza</td>
                 <td>Dec 11</td>
                 <td>18 pax</td>
-                <td><span class="status-badge pending">Pending</span></td>
+                <td><span class="status-badge pending"><span data-de="Pending" data-ar="قيد الانتظار">Pending</span></span></td>
               </tr>
               <tr>
                 <td><strong>ETB-0057</strong></td>
@@ -1027,7 +1060,7 @@
                 <td>Valley of the Kings</td>
                 <td>Dec 8</td>
                 <td>22 pax</td>
-                <td><span class="status-badge confirmed">Confirmed</span></td>
+                <td><span class="status-badge confirmed"><span data-de="Confirmed" data-ar="مؤكد">Confirmed</span></span></td>
               </tr>
               <tr>
                 <td><strong>ETB-0056</strong></td>
@@ -1051,7 +1084,7 @@
                 <td>Alexandria Trail</td>
                 <td>Nov 25</td>
                 <td>12 pax</td>
-                <td><span class="status-badge cancelled">Cancelled</span></td>
+                <td><span class="status-badge cancelled"><span data-de="Cancelled" data-ar="ملغى">Cancelled</span></span></td>
               </tr>
             </tbody>
           </table>
@@ -1059,42 +1092,42 @@
 
         <div class="admin-card">
           <div class="admin-card-header">
-            <h4>Recent Activity</h4>
-            <span class="view-all">All logs →</span>
+            <h4><span data-de="Recent Activity" data-ar="النشاط الأخير">Recent Activity</span></h4>
+            <span class="view-all"><span data-de="All logs →" data-ar="كل السجلات →">All logs →</span></span>
           </div>
           <div class="activity-list">
             <div class="activity-item">
               <div class="activity-dot gold"></div>
               <div>
-                <div class="activity-text">New booking ETB-0058 submitted by Müller Reisen GmbH for Dec 11.</div>
-                <div class="activity-time">2 minutes ago</div>
+                <div class="activity-text"><span data-de="New booking ETB-0058 submitted by Müller Reisen GmbH for Dec 11." data-ar="تم تقديم حجز جديد ETB-0058 من Müller Reisen GmbH ليوم ١١ ديسمبر.">New booking ETB-0058 submitted by Müller Reisen GmbH for Dec 11.</span></div>
+                <div class="activity-time"><span data-de="2 minutes ago" data-ar="منذ دقيقتين">2 minutes ago</span></div>
               </div>
             </div>
             <div class="activity-item">
               <div class="activity-dot blue"></div>
               <div>
-                <div class="activity-text">Guide Ahmed Hassan assigned to ETB-0057 (Valley of the Kings, Dec 8).</div>
-                <div class="activity-time">1 hour ago</div>
+                <div class="activity-text"><span data-de="Guide Ahmed Hassan assigned to ETB-0057 (Valley of the Kings, Dec 8)." data-ar="تم تعيين المرشد أحمد حسن للحجز ETB-0057 (وادي الملوك، ٨ ديسمبر).">Guide Ahmed Hassan assigned to ETB-0057 (Valley of the Kings, Dec 8).</span></div>
+                <div class="activity-time"><span data-de="1 hour ago" data-ar="منذ ساعة">1 hour ago</span></div>
               </div>
             </div>
             <div class="activity-item">
               <div class="activity-dot green"></div>
               <div>
-                <div class="activity-text">Guide Layla Mansour onboarded — cert. #MOT-2022-0015 verified.</div>
-                <div class="activity-time">3 hours ago</div>
+                <div class="activity-text"><span data-de="Guide Layla Mansour onboarded — cert. #MOT-2022-0015 verified." data-ar="تم تسجيل المرشدة ليلى منصور — شهادة #MOT-2022-0015 موثقة.">Guide Layla Mansour onboarded — cert. #MOT-2022-0015 verified.</span></div>
+                <div class="activity-time"><span data-de="3 hours ago" data-ar="منذ ٣ ساعات">3 hours ago</span></div>
               </div>
             </div>
             <div class="activity-item">
               <div class="activity-dot gold"></div>
               <div>
-                <div class="activity-text">ETB-0056 payment confirmed — €3,600 received (Dresden Reisen).</div>
-                <div class="activity-time">Yesterday</div>
+                <div class="activity-text"><span data-de="ETB-0056 payment confirmed — €3,600 received (Dresden Reisen)." data-ar="تم تأكيد دفع ETB-0056 — تم استلام ٣٬٦٠٠ يورو (Dresden Reisen).">ETB-0056 payment confirmed — €3,600 received (Dresden Reisen).</span></div>
+                <div class="activity-time"><span data-de="Yesterday" data-ar="أمس">Yesterday</span></div>
               </div>
             </div>
             <div class="activity-item">
               <div class="activity-dot blue"></div>
               <div>
-                <div class="activity-text">Monthly progress report submitted to Ministry of Tourism.</div>
+                <div class="activity-text"><span data-de="Monthly progress report submitted to Ministry of Tourism." data-ar="تم تقديم تقرير التقدم الشهري لوزارة السياحة.">Monthly progress report submitted to Ministry of Tourism.</span></div>
                 <div class="activity-time">Yesterday</div>
               </div>
             </div>
@@ -1142,7 +1175,44 @@
     currentLang = lang;
     document.getElementById('lang-de').classList.toggle('active', lang === 'de');
     document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
-    showToast(lang === 'ar' ? 'تم التبديل إلى العربية 🇪🇬' : 'Sprache auf Deutsch umgestellt 🇩🇪');
+
+    // Swap all [data-de] / [data-ar] text nodes
+    document.querySelectorAll('[data-de][data-ar]').forEach(el => {
+      el.textContent = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-de');
+    });
+
+    // RTL body class
+    document.body.classList.toggle('ar', lang === 'ar');
+    document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : 'de');
+
+    // Swap placeholder text on inputs
+    const placeholders = {
+      de: { company: 'e.g. Müller Reisen GmbH', name: 'Full name',
+            email: 'email@company.de', phone: '+49...' },
+      ar: { company: 'مثال: شركة الألف للسياحة', name: 'الاسم الكامل',
+            email: 'email@company.eg', phone: '+20...' }
+    };
+    const p = placeholders[lang];
+    const inputs = document.querySelectorAll('input[type=text], input[type=email]');
+    if (inputs[0]) inputs[0].placeholder = p.company;
+    if (inputs[1]) inputs[1].placeholder = p.name;
+    if (inputs[2]) inputs[2].placeholder = p.email;
+    if (inputs[3]) inputs[3].placeholder = p.phone;
+
+    // Update dynamic summary fields
+    if (lang === 'ar') {
+      const sd = document.getElementById('sum-date');
+      if (sd && sd.textContent.includes('December')) sd.textContent = '١١ ديسمبر ٢٠٢٦';
+      const ss = document.getElementById('sum-size');
+      if (ss) ss.textContent = '١٨ مشاركاً';
+    } else {
+      const sd = document.getElementById('sum-date');
+      if (sd) sd.textContent = 'December 11, 2026';
+      const ss = document.getElementById('sum-size');
+      if (ss) ss.textContent = '18 participants';
+    }
+
+    showToast(lang === 'ar' ? '🇪🇬 تم التبديل إلى العربية' : '🇩🇪 Sprache auf Deutsch umgestellt');
   }
 
   function filterChip(el) {
