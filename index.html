@@ -532,6 +532,1210 @@
 
 <!-- NAV -->
 <nav>
+  <div class="nav-logo"><span data-de="ETEP" data-ar="بوابة ETEP">ETEP</span> <span data-de="/ Ägypten Tourismus Ausflug-Portal" data-ar="/ البوابة السياحية المصرية">/ Egypt Tourism Excursion Portal</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showScreen('home')"><span data-de="Startseite" data-ar="الرئيسية">Home</span></button>
+    <button class="nav-tab" onclick="showScreen('catalogue')"><span data-de="Ausflüge" data-ar="الرحلات">Excursions</span></button>
+    <button class="nav-tab" onclick="showScreen('booking')"><span data-de="Buchen" data-ar="احجز">Book</span></button>
+    <button class="nav-tab" onclick="showScreen('guides')"><span data-de="Reiseführer" data-ar="المرشدون">Guides</span></button>
+    <button class="nav-tab" onclick="showScreen('admin')"><span data-de="Verwaltung" data-ar="الإدارة">Admin</span></button>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="lang-de" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" id="lang-ar" onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<!-- ── SCREEN 1: HOME ── -->
+<div class="screen active" id="screen-home">
+  <div class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-tag"><span data-de="Ministerium für Tourismus — Offizielles Portal" data-ar="وزارة السياحة — البوابة الرسمية">Ministry of Tourism — Official Portal</span></div>
+      <h1><span data-de="Entdecke" data-ar="اكتشف">Discover</span><br><em><span data-de="Zeitloses" data-ar="خالد">Timeless</span></em><br><span data-de="Ägypten" data-ar="مصر">Egypt</span></h1>
+      <p class="hero-sub"><span data-de="Das offizielle zweisprachige Portal für deutsche Reisegruppen zur Buchung zertifizierter geführter Ausflüge zu Ägyptens bedeutendsten Kultur- und Geschichtsstätten." data-ar="البوابة الرسمية ثنائية اللغة لمجموعات السياحة الألمانية لحجز الرحلات المصحوبة بمرشدين معتمدين عبر أبرز المواقع الثقافية والتاريخية في مصر.">The official bilingual portal for German tour groups to book certified guided excursions across Egypt's most iconic cultural and historical destinations.</span></p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="showScreen('catalogue')"><span data-de="Ausflüge erkunden" data-ar="تصفح الرحلات">Browse Excursions</span></button>
+        <button class="btn-outline" onclick="showScreen('booking')"><span data-de="Gruppenreise buchen" data-ar="احجز رحلة جماعية">Book a Group Tour</span></button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="dest-card">
+        <div class="dest-icon">🏛️</div>
+        <h4><span data-de="Pyramids of Giza" data-ar="أهرامات الجيزة">Pyramids of Giza</span></h4>
+        <p><span data-de="Region Kairo" data-ar="منطقة القاهرة">Cairo Region</span></p>
+      </div>
+      <div class="dest-card">
+        <div class="dest-icon">⛵</div>
+        <h4><span data-de="Nil-Luxor-Kreuzfahrt" data-ar="رحلة نيلية للأقصر">Nile Luxor Cruise</span></h4>
+        <p><span data-de="Oberägypten" data-ar="صعيد مصر">Upper Egypt</span></p>
+      </div>
+      <div class="dest-card">
+        <div class="dest-icon">🗿</div>
+        <h4><span data-de="Abu Simbel" data-ar="أبو سمبل">Abu Simbel</span></h4>
+        <p><span data-de="Nubisches Erbe" data-ar="التراث النوبي">Nubian Heritage</span></p>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">15+</div>
+        <div class="stat-label"><span data-de="Reiseziele" data-ar="وجهات">Destinations</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">20+</div>
+        <div class="stat-label"><span data-de="Zertifizierte Reiseführer" data-ar="مرشدون معتمدون">Certified Guides</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-label"><span data-de="Sprachen (AR / DE)" data-ar="اللغات (ع / د)">Languages (AR / DE)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SCREEN 2: CATALOGUE ── -->
+<div class="screen" id="screen-catalogue">
+  <div class="page-header">
+    <h2><span data-de="Ausflug" data-ar="كتالوج">Excursion</span> <em><span data-de="Katalog" data-ar="الرحلات">Catalogue</span></em></h2>
+    <p>Browse all certified group tours across Egypt — pricing in EUR & EGP</p>
+  </div>
+  <div class="filters-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-chip active" onclick="filterChip(this)"><span data-de="Alle Regionen" data-ar="كل المناطق">All Regions</span></button>
+    <button class="filter-chip" onclick="filterChip(this)">Cairo</button>
+    <button class="filter-chip" onclick="filterChip(this)">Luxor</button>
+    <button class="filter-chip" onclick="filterChip(this)">Aswan</button>
+    <button class="filter-chip" onclick="filterChip(this)">Alexandria</button>
+    <button class="filter-chip" onclick="filterChip(this)">Sinai</button>
+  </div>
+  <div class="catalogue-grid">
+
+    <div class="dest-tile" onclick="selectTour('Pyramids of Giza & Sphinx')">
+      <div class="tile-img" style="background:linear-gradient(135deg,#C8963E22,#C4613A22);">
+        🏛️
+        <div class="tile-img-overlay"></div>
+        <div class="tile-badge"><span data-de="Beliebtester" data-ar="الأكثر شعبية">Most Popular</span></div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-region">Cairo Region</div>
+        <h3>Pyramids of Giza & Sphinx</h3>
+        <p><span data-de="Ganztägige zertifizierte Führung durch die Großen Pyramiden, die Sphinx und die Chephren-Pyramide mit zweisprachigem Kommentar." data-ar="جولة إرشادية معتمدة طوال اليوم في الأهرامات الكبرى وأبو الهول وهرم خفرع مع تعليق بلغتين.">Full-day certified guided tour of the Great Pyramids, Sphinx, and Pyramid of Khafre with bilingual commentary.</span></p>
+        <div class="tile-meta">
+          <div class="tile-meta-item">👥 <strong><span data-de="Max. 30" data-ar="الحد الأقصى 30">Max 30</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="8 Std." data-ar="٨ ساعات">8 hrs</span></strong></div>
+          <div class="tile-meta-item">⭐ <strong>4.8</strong></div>
+        </div>
+        <div class="tile-footer">
+          <div class="price">€85 <span><span data-de="/ Person" data-ar="/ للشخص">/ person</span></span></div>
+          <button class="btn-sm" onclick="event.stopPropagation();showScreen('booking')"><span data-de="Jetzt buchen" data-ar="احجز الآن">Book Now</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-tile" onclick="selectTour('Luxor Temple & Karnak')">
+      <div class="tile-img" style="background:linear-gradient(135deg,#2D5F6E22,#C8963E22);">
+        🏺
+        <div class="tile-img-overlay"></div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-region">Luxor</div>
+        <h3>Luxor Temple & Karnak</h3>
+        <p><span data-de="Geführte Reise durch die antiken Tempel von Luxor und den prächtigen Karnak-Komplex." data-ar="رحلة إرشادية عبر معابد الأقصر القديمة والمجمع الرائع للكرنك.">Two-site guided journey through the ancient temples of Luxor and the magnificent Karnak complex.</span></p>
+        <div class="tile-meta">
+          <div class="tile-meta-item">👥 <strong><span data-de="Max. 25" data-ar="الحد الأقصى 25">Max 25</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="6 Std." data-ar="٦ ساعات">6 hrs</span></strong></div>
+          <div class="tile-meta-item">⭐ <strong>4.7</strong></div>
+        </div>
+        <div class="tile-footer">
+          <div class="price">€70 <span>/ person</span></div>
+          <button class="btn-sm" onclick="event.stopPropagation();showScreen('booking')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-tile" onclick="selectTour('<span data-de="Tal der Könige" data-ar="وادي الملوك">Valley of the Kings</span>')">
+      <div class="tile-img" style="background:linear-gradient(135deg,#C4613A22,#1A120822);">
+        👑
+        <div class="tile-img-overlay"></div>
+        <div class="tile-badge" style="background:var(--terr);color:white;">New</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-region"><span data-de="Luxor — Westufer" data-ar="الأقصر — الضفة الغربية">Luxor — West Bank</span></div>
+        <h3>Valley of the Kings</h3>
+        <p><span data-de="Erkunden Sie die königlichen Gräber der Pharaonen, darunter Tutanchamun und Ramses II., mit fachkundigem Reiseführerkommentar." data-ar="استكشف مقابر الفراعنة الملكية بما فيها توت عنخ آمون ورمسيس الثاني مع تعليق مرشد خبير.">Explore the royal tombs of pharaohs including Tutankhamun and Ramesses II with expert guide commentary.</span></p>
+        <div class="tile-meta">
+          <div class="tile-meta-item">👥 <strong><span data-de="Max. 20" data-ar="الحد الأقصى 20">Max 20</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="5 Std." data-ar="٥ ساعات">5 hrs</span></strong></div>
+          <div class="tile-meta-item">⭐ <strong>4.9</strong></div>
+        </div>
+        <div class="tile-footer">
+          <div class="price">€90 <span>/ person</span></div>
+          <button class="btn-sm" onclick="event.stopPropagation();showScreen('booking')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-tile">
+      <div class="tile-img" style="background:linear-gradient(135deg,#2D5F6E33,#1A120833);">
+        🛕
+        <div class="tile-img-overlay"></div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-region">Aswan</div>
+        <h3><span data-de="Tempel von Abu Simbel" data-ar="معابد أبو سمبل">Abu Simbel Temples</span></h3>
+        <p><span data-de="UNESCO-Weltkulturerbe — zwei in Fels gehauene Tempel von Ramses II., die vor der Nilflut gerettet wurden." data-ar="موقع تراث عالمي لليونسكو — معبدان منحوتان في الصخر لرمسيس الثاني تم نقلهما من فيضان النيل.">UNESCO World Heritage site — twin rock-cut temples of Ramesses II relocated to escape the Nile flood.</span></p>
+        <div class="tile-meta">
+          <div class="tile-meta-item">👥 <strong><span data-de="Max. 35" data-ar="الحد الأقصى 35">Max 35</span></strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="Ganztägig" data-ar="يوم كامل">Full day</span></strong></div>
+          <div class="tile-meta-item">⭐ <strong>4.9</strong></div>
+        </div>
+        <div class="tile-footer">
+          <div class="price">€120 <span>/ person</span></div>
+          <button class="btn-sm" onclick="showScreen('booking')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-tile">
+      <div class="tile-img" style="background:linear-gradient(135deg,#C8963E22,#2D5F6E22);">
+        🏛️
+        <div class="tile-img-overlay"></div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-region">Cairo</div>
+        <h3>Egyptian Museum & Cairo Citadel</h3>
+        <p><span data-de="Das Ägyptische Museum beherbergt die weltgrößte Sammlung pharaonischer Altertümer, gefolgt von der mittelalterlichen Zitadelle." data-ar="يضم المتحف المصري أكبر مجموعة من الآثار الفرعونية في العالم، يعقبها قلعة القاهرة الأثرية.">The Egyptian Museum houses the world's largest collection of pharaonic antiquities, followed by the medieval Citadel.</span></p>
+        <div class="tile-meta">
+          <div class="tile-meta-item">👥 <strong>Max 30</strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="7 Std." data-ar="٧ ساعات">7 hrs</span></strong></div>
+          <div class="tile-meta-item">⭐ <strong>4.6</strong></div>
+        </div>
+        <div class="tile-footer">
+          <div class="price">€65 <span>/ person</span></div>
+          <button class="btn-sm" onclick="showScreen('booking')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dest-tile">
+      <div class="tile-img" style="background:linear-gradient(135deg,#C4613A22,#C8963E22);">
+        ⛪
+        <div class="tile-img-overlay"></div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-region">Alexandria</div>
+        <h3><span data-de="Kulturpfad Alexandria" data-ar="مسار تراث الإسكندرية">Alexandria Heritage Trail</span></h3>
+        <p><span data-de="Die Katakomben von Kom el-Shoqafa, die Pompejussäule und die beeindruckende Bibliotheca Alexandrina an der Mittelmeerküste." data-ar="مقابر كوم الشقافة وعمود بومبي ومكتبة الإسكندرية الرائعة على ساحل البحر المتوسط.">Catacombs of Kom el-Shoqafa, Pompey's Pillar, and the stunning Bibliotheca Alexandrina on the Mediterranean coast.</span></p>
+        <div class="tile-meta">
+          <div class="tile-meta-item">👥 <strong>Max 25</strong> guests</div>
+          <div class="tile-meta-item">⏱ <strong><span data-de="9 Std." data-ar="٩ ساعات">9 hrs</span></strong></div>
+          <div class="tile-meta-item">⭐ <strong>4.5</strong></div>
+        </div>
+        <div class="tile-footer">
+          <div class="price">€75 <span>/ person</span></div>
+          <button class="btn-sm" onclick="showScreen('booking')">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── SCREEN 3: BOOKING ── -->
+<div class="screen" id="screen-booking">
+  <div class="booking-layout">
+    <div class="booking-main">
+      <div class="steps-bar">
+        <div class="step done">
+          <div class="step-num">✓</div>
+          <div class="step-label"><span data-de="Reise wählen" data-ar="اختر الرحلة">Select Tour</span></div>
+        </div>
+        <div class="step active">
+          <div class="step-num">2</div>
+          <div class="step-label"><span data-de="Gruppendetails" data-ar="بيانات المجموعة">Group Details</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-label">Date & Guide</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-label"><span data-de="Zahlung" data-ar="الدفع">Payment</span></div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-label"><span data-de="Bestätigung" data-ar="التأكيد">Confirmation</span></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3><span data-de="Reiseveranstalter / Gruppenleiter-Details" data-ar="بيانات مشغل الجولات / قائد المجموعة">Tour Operator / Group Leader Details</span></h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label><span data-de="Firmen- / Agenturname" data-ar="اسم الشركة / الوكالة">Company / Agency Name</span></label>
+            <input type="text" placeholder="e.g. Müller Reisen GmbH" value="Müller Reisen GmbH">
+          </div>
+          <div class="form-group">
+            <label><span data-de="Vollständiger Name des Gruppenleiters" data-ar="الاسم الكامل لقائد المجموعة">Group Leader Full Name</span></label>
+            <input type="text" placeholder="Full name" value="Hans Weber">
+          </div>
+          <div class="form-group">
+            <label><span data-de="E-Mail-Adresse" data-ar="البريد الإلكتروني">Email Address</span></label>
+            <input type="email" placeholder="email@company.de" value="h.weber@mullerreisen.de">
+          </div>
+          <div class="form-group">
+            <label><span data-de="Telefonnummer" data-ar="رقم الهاتف">Phone Number</span></label>
+            <input type="text" placeholder="+49..." value="+49 30 8874 2200">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3><span data-de="Gruppeninformationen" data-ar="معلومات المجموعة">Group Information</span></h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label><span data-de="Gewählter Ausflug" data-ar="الرحلة المختارة">Selected Excursion</span></label>
+            <select id="excursion-select">
+              <option value="pyramids" selected>Pyramids of Giza & Sphinx</option>
+              <option value="luxor">Luxor Temple & Karnak</option>
+              <option value="valley">Valley of the Kings</option>
+              <option value="abu">Abu Simbel Temples</option>
+              <option value="museum">Egyptian Museum & Cairo Citadel</option>
+              <option value="alex">Alexandria Heritage Trail</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><span data-de="Anzahl der Teilnehmer" data-ar="عدد المشاركين">Number of Participants</span></label>
+            <input type="number" value="18" min="2" max="35" id="num-participants" oninput="updateSummary()">
+          </div>
+          <div class="form-group full">
+            <label><span data-de="Besondere Anforderungen / Barrierefreiheitshinweise" data-ar="المتطلبات الخاصة / ملاحظات الإتاحة">Special Requirements / Accessibility Notes</span></label>
+            <textarea placeholder="e.g. 2 wheelchair users, vegetarian catering needed...">Group includes 2 elderly participants — please ensure moderate walking pace.</textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3><span data-de="Bevorzugtes Datum wählen" data-ar="اختر التاريخ المفضل">Select Preferred Date</span></h3>
+        <div class="date-grid">
+          <div class="cal-header">Mo</div><div class="cal-header">Di</div><div class="cal-header">Mi</div>
+          <div class="cal-header">Do</div><div class="cal-header">Fr</div><div class="cal-header">Sa</div>
+          <div class="cal-header">So</div>
+          <div class="cal-day unavail">1</div><div class="cal-day unavail">2</div>
+          <div class="cal-day" onclick="selectDate(this)">3</div>
+          <div class="cal-day" onclick="selectDate(this)">4</div>
+          <div class="cal-day" onclick="selectDate(this)">5</div>
+          <div class="cal-day unavail">6</div><div class="cal-day unavail">7</div>
+          <div class="cal-day" onclick="selectDate(this)">8</div>
+          <div class="cal-day" onclick="selectDate(this)">9</div>
+          <div class="cal-day" onclick="selectDate(this)">10</div>
+          <div class="cal-day selected" onclick="selectDate(this)">11</div>
+          <div class="cal-day" onclick="selectDate(this)">12</div>
+          <div class="cal-day unavail">13</div><div class="cal-day unavail">14</div>
+          <div class="cal-day" onclick="selectDate(this)">15</div>
+          <div class="cal-day" onclick="selectDate(this)">16</div>
+          <div class="cal-day" onclick="selectDate(this)">17</div>
+          <div class="cal-day" onclick="selectDate(this)">18</div>
+          <div class="cal-day" onclick="selectDate(this)">19</div>
+          <div class="cal-day unavail">20</div><div class="cal-day unavail">21</div>
+          <div class="cal-day" onclick="selectDate(this)">22</div>
+          <div class="cal-day" onclick="selectDate(this)">23</div>
+          <div class="cal-day" onclick="selectDate(this)">24</div>
+          <div class="cal-day" onclick="selectDate(this)">25</div>
+          <div class="cal-day" onclick="selectDate(this)">26</div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px;">Grey dates = fully booked. Green date = your selection. Availability shown for December 2026.</p>
+      </div>
+
+      <button class="btn-primary" style="width:100%;padding:16px;font-size:15px;" onclick="proceedBooking()">
+        Continue to Guide Selection & Payment →
+      </button>
+    </div>
+
+    <div class="booking-aside">
+      <div class="aside-title"><span data-de="Buchungs-" data-ar="ملخص">Booking</span> <em><span data-de="übersicht" data-ar="الحجز">Summary</span></em></div>
+      <div class="summary-row">
+        <span class="key">Excursion</span>
+        <span class="val" id="sum-tour">Pyramids of Giza & Sphinx</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Region</span>
+        <span class="val">Cairo Region</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Duration</span>
+        <span class="val"><span data-de="8 Stunden (ganztägig)" data-ar="٨ ساعات (يوم كامل)">8 hours (full day)</span></span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Date</span>
+        <span class="val" id="sum-date"><span data-de="11. Dezember 2026" data-ar="١١ ديسمبر ٢٠٢٦">December 11, 2026</span></span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Group Size</span>
+        <span class="val" id="sum-size"><span data-de="18 Teilnehmer" data-ar="١٨ مشاركاً">18 participants</span></span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Rate per Person</span>
+        <span class="val">€85</span>
+      </div>
+      <hr class="summary-divider">
+      <div class="summary-total">
+        <span class="key">Total</span>
+        <span class="val" id="sum-total">€1,530</span>
+      </div>
+      <p class="aside-note"><span data-de="≈ 83.000 EGP zum aktuellen Wechselkurs. Zahlung in EUR oder EGP möglich. PCI-DSS-gesichert." data-ar="≈ ٨٣٬٠٠٠ جنيه مصري بسعر الصرف الحالي. يُقبل الدفع باليورو أو الجنيه المصري. مؤمَّن بمعيار PCI-DSS.">≈ EGP 83,000 at current exchange rate. Payment accepted in EUR or EGP. PCI-DSS secured.</span></p>
+      <hr class="summary-divider">
+      <div class="summary-row">
+        <span class="key">Guide Language</span>
+        <span class="val">🇩🇪 German</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Guide Status</span>
+        <span class="val" style="color:#2E7D52;">✓ Available</span>
+      </div>
+      <div class="summary-row">
+        <span class="key">Confirmation</span>
+        <span class="val"><span data-de="E-Mail + SMS innerhalb von 10 Min." data-ar="بريد إلكتروني + رسالة نصية خلال ١٠ دقائق">Email + SMS within 10 min</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SCREEN 4: GUIDES ── -->
+<div class="screen" id="screen-guides">
+  <div class="guide-layout">
+    <h2><span data-de="Zertifizierten" data-ar="اختر مرشداً">Assign a Certified</span> <em><span data-de="Reiseführer zuweisen" data-ar="معتمداً">Guide</span></em></h2>
+    <p><span data-de="Alle Reiseführer sind vom Ministerium zertifiziert und sprechen fließend Deutsch. Filtern nach Spezialisierung oder Verfügbarkeit." data-ar="جميع المرشدين معتمدون من وزارة السياحة ويتحدثون الألمانية بطلاقة. صفّـِّل حسب التخصص أو التوفر.">All guides are Ministry-certified and speak German fluently. Filter by specialisation or availability.</span></p>
+    <div class="guide-filters">
+      <button class="filter-chip active" onclick="filterChip(this)"><span data-de="Alle Reiseführer" data-ar="كل المرشدين">All Guides</span></button>
+      <button class="filter-chip" onclick="filterChip(this)"><span data-de="Pharaonische Geschichte" data-ar="التاريخ الفرعوني">Pharaonic History</span></button>
+      <button class="filter-chip" onclick="filterChip(this)"><span data-de="Islamisches Kairo" data-ar="القاهرة الإسلامية">Islamic Cairo</span></button>
+      <button class="filter-chip" onclick="filterChip(this)">Nubian Heritage</button>
+      <button class="filter-chip" onclick="filterChip(this)"><span data-de="Verfügbar am 11. Dez." data-ar="متاح ١١ ديسمبر">Available Dec 11</span></button>
+    </div>
+    <div class="guides-grid">
+
+      <div class="guide-card selected" onclick="selectGuide(this)">
+        <div class="guide-avatar">AH</div>
+        <h4>Ahmed Hassan</h4>
+        <div class="guide-spec">Pharaonic History</div>
+        <div class="guide-langs">
+          <span class="lang-tag">🇩🇪 DE</span>
+          <span class="lang-tag">🇬🇧 EN</span>
+          <span class="lang-tag">🇪🇬 AR</span>
+        </div>
+        <div class="guide-rating">★★★★★ <span>(127 reviews)</span></div>
+        <div class="guide-avail"><span data-de="✓ Verfügbar am 11. Dez." data-ar="✓ متاح ١١ ديسمبر">✓ Available Dec 11</span></div>
+        <div class="guide-cert">Cert. #MOT-2024-0042</div>
+        <button class="guide-select-btn">✓ Selected</button>
+      </div>
+
+      <div class="guide-card" onclick="selectGuide(this)">
+        <div class="guide-avatar" style="background:linear-gradient(135deg,var(--nile),var(--nile-lt));">NR</div>
+        <h4>Nour Raafat</h4>
+        <div class="guide-spec">Islamic Cairo</div>
+        <div class="guide-langs">
+          <span class="lang-tag">🇩🇪 DE</span>
+          <span class="lang-tag">🇫🇷 FR</span>
+          <span class="lang-tag">🇪🇬 AR</span>
+        </div>
+        <div class="guide-rating">★★★★★ <span>(89 reviews)</span></div>
+        <div class="guide-avail">✓ Available Dec 11</div>
+        <div class="guide-cert">Cert. #MOT-2023-0188</div>
+        <button class="guide-select-btn"><span data-de="Reiseführer wählen" data-ar="اختر المرشد">Select Guide</span></button>
+      </div>
+
+      <div class="guide-card" onclick="selectGuide(this)">
+        <div class="guide-avatar" style="background:linear-gradient(135deg,var(--terr),#E8803A);">KS</div>
+        <h4>Karim Salah</h4>
+        <div class="guide-spec">Nubian Heritage</div>
+        <div class="guide-langs">
+          <span class="lang-tag">🇩🇪 DE</span>
+          <span class="lang-tag">🇬🇧 EN</span>
+          <span class="lang-tag">🇪🇬 AR</span>
+        </div>
+        <div class="guide-rating">★★★★☆ <span>(64 reviews)</span></div>
+        <div class="guide-avail" style="color:var(--terr);"><span data-de="✗ Nicht verfügbar am 11. Dez." data-ar="✗ غير متاح ١١ ديسمبر">✗ Unavailable Dec 11</span></div>
+        <div class="guide-cert">Cert. #MOT-2024-0091</div>
+        <button class="guide-select-btn">Select Guide</button>
+      </div>
+
+      <div class="guide-card" onclick="selectGuide(this)">
+        <div class="guide-avatar" style="background:linear-gradient(135deg,#5A3E8A,#7A5EAA);">LM</div>
+        <h4>Layla Mansour</h4>
+        <div class="guide-spec">Ancient Alexandria</div>
+        <div class="guide-langs">
+          <span class="lang-tag">🇩🇪 DE</span>
+          <span class="lang-tag">🇬🇧 EN</span>
+          <span class="lang-tag">🇪🇬 AR</span>
+        </div>
+        <div class="guide-rating">★★★★★ <span>(103 reviews)</span></div>
+        <div class="guide-avail">✓ Available Dec 11</div>
+        <div class="guide-cert">Cert. #MOT-2022-0015</div>
+        <button class="guide-select-btn">Select Guide</button>
+      </div>
+
+    </div>
+    <div style="margin-top:32px; display:flex; justify-content:flex-end;">
+      <button class="btn-primary" onclick="proceedBooking()" style="padding:14px 40px;">Confirm Guide & Proceed to Payment →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── SCREEN 5: ADMIN DASHBOARD ── -->
+<div class="screen" id="screen-admin">
+  <div class="admin-layout">
+    <div class="admin-sidebar">
+      <div class="sidebar-label">Overview</div>
+      <div class="sidebar-item active"><span class="sidebar-icon">📊</span> Dashboard</div>
+      <div class="sidebar-item"><span class="sidebar-icon">📅</span> Bookings</div>
+      <div class="sidebar-label">Management</div>
+      <div class="sidebar-item"><span class="sidebar-icon">🗺️</span> Excursions</div>
+      <div class="sidebar-item"><span class="sidebar-icon">👤</span> Guides</div>
+      <div class="sidebar-item"><span class="sidebar-icon">🏛️</span> Sites & Venues</div>
+      <div class="sidebar-label">Reports</div>
+      <div class="sidebar-item"><span class="sidebar-icon">📈</span> Analytics</div>
+      <div class="sidebar-item"><span class="sidebar-icon">💰</span> Revenue</div>
+      <div class="sidebar-label">System</div>
+      <div class="sidebar-item"><span class="sidebar-icon">⚙️</span> Settings</div>
+      <div class="sidebar-item"><span class="sidebar-icon">🔒</span> Security</div>
+    </div>
+
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <div>
+          <h2><span data-de="Verwaltung" data-ar="لوحة">Admin</span> <em><span data-de="Dashboard" data-ar="التحكم"><span data-de="Dashboard" data-ar="لوحة التحكم">Dashboard</span></span></em></h2>
+          <div class="admin-date"><span data-de="Ministerium für Tourismus — ETEP-Operationszentrum" data-ar="وزارة السياحة — مركز عمليات ETEP">Ministry of Tourism — ETEP Operations Centre</span></div>
+        </div>
+        <button class="btn-primary" onclick="showToast('New booking notification sent!')"><span data-de="+ Neue Buchung" data-ar="+ حجز جديد">+ New Booking</span></button>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label"><span data-de="Buchungen gesamt" data-ar="إجمالي الحجوزات">Total Bookings</span></div>
+          <div class="kpi-value">58</div>
+          <div class="kpi-change up"><span data-de="↑ 12 diesen Monat" data-ar="↑ ١٢ هذا الشهر">↑ 12 this month</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label"><span data-de="Aktive Reiseführer" data-ar="المرشدون النشطون">Active Guides</span></div>
+          <div class="kpi-value">23</div>
+          <div class="kpi-change up"><span data-de="↑ 3 neu registriert" data-ar="↑ ٣ مُدرَجون">↑ 3 onboarded</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label"><span data-de="Portal-Verfügbarkeit" data-ar="وقت تشغيل البوابة">Portal Uptime</span></div>
+          <div class="kpi-value">99.7%</div>
+          <div class="kpi-change neutral"><span data-de="30-Tage-Durchschnitt" data-ar="متوسط ٣٠ يوماً">30-day rolling</span></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label"><span data-de="Zufriedenheitswert" data-ar="نقاط الرضا">Satisfaction Score</span></div>
+          <div class="kpi-value">4.6</div>
+          <div class="kpi-change up"><span data-de="↑ von 4,4 letzten Monat" data-ar="↑ من ٤٫٤ الشهر الماضي">↑ from 4.4 last month</span></div>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h4><span data-de="Neueste Buchungen" data-ar="الحجوزات الأخيرة">Recent Bookings</span></h4>
+            <span class="view-all"><span data-de="Alle anzeigen →" data-ar="عرض الكل →">View all →</span></span>
+          </div>
+          <table class="bookings-table">
+            <thead>
+              <tr>
+                <th><span data-de="Ref." data-ar="المرجع">Ref</span></th><th><span data-de="Reiseveranstalter" data-ar="مشغل الجولات">Tour Operator</span></th><th>Excursion</th><th>Date</th><th>Group</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ETB-0058</strong></td>
+                <td>Müller Reisen GmbH</td>
+                <td>Pyramids of Giza</td>
+                <td>Dec 11</td>
+                <td>18 pax</td>
+                <td><span class="status-badge pending"><span data-de="Ausstehend" data-ar="قيد الانتظار">Pending</span></span></td>
+              </tr>
+              <tr>
+                <td><strong>ETB-0057</strong></td>
+                <td>Bavaria Tours</td>
+                <td>Valley of the Kings</td>
+                <td>Dec 8</td>
+                <td>22 pax</td>
+                <td><span class="status-badge confirmed"><span data-de="Bestätigt" data-ar="مؤكد">Confirmed</span></span></td>
+              </tr>
+              <tr>
+                <td><strong>ETB-0056</strong></td>
+                <td>Dresden Reisen</td>
+                <td>Abu Simbel Temples</td>
+                <td>Dec 5</td>
+                <td>30 pax</td>
+                <td><span class="status-badge confirmed">Confirmed</span></td>
+              </tr>
+              <tr>
+                <td><strong>ETB-0055</strong></td>
+                <td>Hamburg Travel Co.</td>
+                <td>Luxor & Karnak</td>
+                <td>Nov 29</td>
+                <td>15 pax</td>
+                <td><span class="status-badge confirmed">Confirmed</span></td>
+              </tr>
+              <tr>
+                <td><strong>ETB-0054</strong></td>
+                <td>Berlin Explorer</td>
+                <td>Alexandria Trail</td>
+                <td>Nov 25</td>
+                <td>12 pax</td>
+                <td><span class="status-badge cancelled"><span data-de="Storniert" data-ar="ملغى">Cancelled</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h4><span data-de="Letzte Aktivitäten" data-ar="النشاط الأخير">Recent Activity</span></h4>
+            <span class="view-all"><span data-de="Alle Protokolle →" data-ar="كل السجلات →">All logs →</span></span>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-dot gold"></div>
+              <div>
+                <div class="activity-text"><span data-de="Neue Buchung ETB-0058 von Müller Reisen GmbH für den 11. Dez. eingereicht." data-ar="تم تقديم حجز جديد ETB-0058 من Müller Reisen GmbH ليوم ١١ ديسمبر.">New booking ETB-0058 submitted by Müller Reisen GmbH for Dec 11.</span></div>
+                <div class="activity-time"><span data-de="Vor 2 Minuten" data-ar="منذ دقيقتين">2 minutes ago</span></div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot blue"></div>
+              <div>
+                <div class="activity-text"><span data-de="Reiseführer Ahmed Hassan der Buchung ETB-0057 (Tal der Könige, 8. Dez.) zugewiesen." data-ar="تم تعيين المرشد أحمد حسن للحجز ETB-0057 (وادي الملوك، ٨ ديسمبر).">Guide Ahmed Hassan assigned to ETB-0057 (Valley of the Kings, Dec 8).</span></div>
+                <div class="activity-time"><span data-de="Vor 1 Stunde" data-ar="منذ ساعة">1 hour ago</span></div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot green"></div>
+              <div>
+                <div class="activity-text"><span data-de="Reiseführerin Layla Mansour registriert — Zertifikat #MOT-2022-0015 bestätigt." data-ar="تم تسجيل المرشدة ليلى منصور — شهادة #MOT-2022-0015 موثقة.">Guide Layla Mansour onboarded — cert. #MOT-2022-0015 verified.</span></div>
+                <div class="activity-time"><span data-de="Vor 3 Stunden" data-ar="منذ ٣ ساعات">3 hours ago</span></div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot gold"></div>
+              <div>
+                <div class="activity-text"><span data-de="Zahlung für ETB-0056 bestätigt — €3.600 erhalten (Dresden Reisen)." data-ar="تم تأكيد دفع ETB-0056 — تم استلام ٣٬٦٠٠ يورو (Dresden Reisen).">ETB-0056 payment confirmed — €3,600 received (Dresden Reisen).</span></div>
+                <div class="activity-time"><span data-de="Gestern" data-ar="أمس">Yesterday</span></div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-dot blue"></div>
+              <div>
+                <div class="activity-text"><span data-de="Monatlicher Fortschrittsbericht an das Ministerium für Tourismus übermittelt." data-ar="تم تقديم تقرير التقدم الشهري لوزارة السياحة.">Monthly progress report submitted to Ministry of Tourism.</span></div>
+                <div class="activity-time">Yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  let currentLang = 'de';
+  let selectedDate = '11';
+
+  const translations = {
+    de: {
+      home: 'Startseite', catalogue: 'Ausflüge', booking: 'Buchen',
+      guides: 'Reiseführer', admin: 'Verwaltung',
+      heroTag: 'Ministerium für Tourismus — Offizielles Portal',
+      heroH1: ['Entdecke', 'Zeitloses', 'Ägypten'],
+      heroCta1: 'Ausflüge entdecken', heroCta2: 'Gruppenreise buchen',
+    },
+    ar: {
+      home: 'الرئيسية', catalogue: 'الرحلات', booking: 'احجز',
+      guides: 'المرشدون', admin: 'الإدارة',
+      heroTag: 'وزارة السياحة — البوابة الرسمية',
+      heroH1: ['اكتشف', 'خالد', 'مصر'],
+      heroCta1: 'تصفح الرحلات', heroCta2: 'احجز رحلة جماعية',
+    }
+  };
+
+  function showScreen(name) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('screen-' + name).classList.add('active');
+    const tabs = document.querySelectorAll('.nav-tab');
+    const map = ['home','catalogue','booking','guides','admin'];
+    tabs[map.indexOf(name)]?.classList.add('active');
+  }
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('lang-de').classList.toggle('active', lang === 'de');
+    document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
+
+    // Swap all [data-de] / [data-ar] text nodes
+    document.querySelectorAll('[data-de][data-ar]').forEach(el => {
+      el.textContent = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-de');
+    });
+
+    // RTL body class
+    document.body.classList.toggle('ar', lang === 'ar');
+    document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : 'de');
+
+    // Swap placeholder text on inputs
+    const placeholders = {
+      de: { company: 'z.B. Müller Reisen GmbH', name: 'Vollständiger Name',
+            email: 'email@firma.de', phone: '+49...' },
+      ar: { company: 'مثال: شركة الألف للسياحة', name: 'الاسم الكامل',
+            email: 'email@company.eg', phone: '+20...' }
+    };
+    const p = placeholders[lang];
+    const inputs = document.querySelectorAll('input[type=text], input[type=email]');
+    if (inputs[0]) inputs[0].placeholder = p.company;
+    if (inputs[1]) inputs[1].placeholder = p.name;
+    if (inputs[2]) inputs[2].placeholder = p.email;
+    if (inputs[3]) inputs[3].placeholder = p.phone;
+
+    // Update dynamic summary fields
+    if (lang === 'ar') {
+      const sd = document.getElementById('sum-date');
+      if (sd && sd.textContent.includes('December')) sd.textContent = '١١ ديسمبر ٢٠٢٦';
+      const ss = document.getElementById('sum-size');
+      if (ss) ss.textContent = '١٨ مشاركاً';
+    } else {
+      const sd = document.getElementById('sum-date');
+      if (sd) sd.textContent = '11. Dezember 2026';
+      const ss = document.getElementById('sum-size');
+      if (ss) ss.textContent = '18 Teilnehmer';
+    }
+
+    showToast(lang === 'ar' ? '🇪🇬 تم التبديل إلى العربية' : '🇩🇪 Sprache auf Deutsch umgestellt');
+  }
+
+  function filterChip(el) {
+    el.closest('.filters-bar, .guide-filters').querySelectorAll('.filter-chip')
+      .forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function selectDate(el) {
+    if (el.classList.contains('unavail')) return;
+    document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedDate = el.textContent;
+    document.getElementById('sum-date').textContent = 'December ' + selectedDate + ', 2026';
+  }
+
+  function updateSummary() {
+    const n = parseInt(document.getElementById('num-participants').value) || 0;
+    document.getElementById('sum-size').textContent = n + ' participants';
+    document.getElementById('sum-total').textContent = '€' + (n * 85).toLocaleString();
+  }
+
+  function selectTour(name) {
+    document.getElementById('sum-tour').textContent = name;
+    showToast('Tour selected: ' + name);
+  }
+
+  function selectGuide(card) {
+    document.querySelectorAll('.guide-card').forEach(c => {
+      c.classList.remove('selected');
+      c.querySelector('.guide-select-btn').textContent = 'Select Guide';
+    });
+    card.classList.add('selected');
+    card.querySelector('.guide-select-btn').textContent = '✓ Selected';
+    const name = card.querySelector('h4').textContent;
+    showToast('Guide selected: ' + name);
+  }
+
+  function proceedBooking() {
+    showToast('✓ Proceeding to payment — confirmation will be sent by email & SMS.');
+    setTimeout(() => showScreen('admin'), 2000);
+  }
+
+  // Apply German on initial page load
+  window.addEventListener('DOMContentLoaded', () => setLang('de'));
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+</script>
+</body>
+</html>    border-radius: 4px; padding: 4px 10px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    cursor: pointer; color: rgba(255,255,255,0.5); transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+
+  /* SCREENS */
+  .screen { display: none; padding-top: 60px; min-height: 100vh; animation: fadeIn 0.35s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  /* ── SCREEN 1: HOMEPAGE ── */
+  .hero {
+    position: relative; height: calc(100vh - 60px);
+    background: linear-gradient(160deg, #1A1208 0%, #2D1F0A 40%, #1A3040 100%);
+    display: flex; align-items: center; overflow: hidden;
+  }
+  .hero-pattern {
+    position: absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(200,150,62,0.03) 60px, rgba(200,150,62,0.03) 61px),
+      repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(200,150,62,0.03) 60px, rgba(200,150,62,0.03) 61px);
+  }
+  .hero-content {
+    position: relative; z-index:2;
+    max-width: 640px; padding: 0 80px;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(200,150,62,0.15);
+    border: 1px solid rgba(200,150,62,0.4);
+    color: var(--gold-lt); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; font-weight: 300; line-height: 1.05;
+    color: var(--white); margin-bottom: 12px;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    font-size: 16px; color: rgba(255,255,255,0.6);
+    line-height: 1.6; margin-bottom: 40px; max-width: 440px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--dark);
+    border: none; padding: 14px 32px; border-radius: var(--r);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.04em;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,150,62,0.4); }
+  .btn-outline {
+    background: none; color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 14px 32px; border-radius: var(--r);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
+    background: linear-gradient(90deg, transparent, rgba(200,150,62,0.04));
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    padding: 40px;
+  }
+  .dest-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(200,150,62,0.2);
+    border-radius: 10px; padding: 20px; width: 160px;
+    backdrop-filter: blur(8px); text-align: center;
+    transition: transform 0.3s;
+  }
+  .dest-card:nth-child(2) { transform: translateY(30px); }
+  .dest-card:hover { transform: translateY(-4px) !important; }
+  .dest-icon { font-size: 32px; margin-bottom: 10px; }
+  .dest-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; color: var(--white); margin-bottom: 4px;
+  }
+  .dest-card p { font-size: 11px; color: rgba(255,255,255,0.45); }
+
+  .hero-stats {
+    position: absolute; bottom: 40px; left: 80px;
+    display: flex; gap: 40px;
+  }
+  .stat { }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 600; color: var(--gold);
+  }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+  /* ── SCREEN 2: CATALOGUE ── */
+  .page-header {
+    background: var(--dark);
+    padding: 48px 80px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px; font-weight: 300; color: var(--white);
+  }
+  .page-header h2 span { color: var(--gold); font-style: italic; }
+  .page-header p { color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 6px; }
+
+  .filters-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 80px;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  }
+  .filter-chip {
+    background: none; border: 1px solid var(--border);
+    border-radius: 20px; padding: 6px 16px;
+    font-size: 12px; font-weight: 500; color: var(--muted);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: var(--gold); border-color: var(--gold); color: var(--dark);
+  }
+  .filter-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-right: 4px; }
+
+  .catalogue-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px; padding: 40px 80px;
+  }
+  .dest-tile {
+    background: var(--white); border-radius: 12px;
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: var(--shadow); transition: all 0.3s; cursor: pointer;
+  }
+  .dest-tile:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(26,18,8,0.16); }
+  .tile-img {
+    height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 60px; position: relative; overflow: hidden;
+  }
+  .tile-img-overlay {
+    position: absolute; inset:0;
+    background: linear-gradient(180deg, transparent 50%, rgba(26,18,8,0.5) 100%);
+  }
+  .tile-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--gold); color: var(--dark);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
+  }
+  .tile-body { padding: 20px; }
+  .tile-region {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--terr); margin-bottom: 6px;
+  }
+  .tile-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600; color: var(--dark); margin-bottom: 6px;
+  }
+  .tile-body p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 14px; }
+  .tile-meta { display: flex; gap: 16px; margin-bottom: 16px; }
+  .tile-meta-item { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+  .tile-meta-item strong { color: var(--dark); }
+  .tile-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 14px; border-top: 1px solid var(--border);
+  }
+  .price { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); font-weight: 600; }
+  .price span { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted); font-weight: 400; }
+  .btn-sm {
+    background: var(--dark); color: var(--white);
+    border: none; padding: 8px 18px; border-radius: var(--r);
+    font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-sm:hover { background: var(--gold); color: var(--dark); }
+
+  /* ── SCREEN 3: BOOKING ── */
+  .booking-layout {
+    display: grid; grid-template-columns: 1fr 380px;
+    gap: 0; min-height: calc(100vh - 60px);
+  }
+  .booking-main { padding: 48px 60px; background: var(--cream); }
+  .booking-aside { background: var(--dark); padding: 40px 36px; border-left: 1px solid var(--border); }
+
+  .steps-bar { display: flex; gap: 0; margin-bottom: 40px; }
+  .step {
+    display: flex; align-items: center; gap: 10px;
+    flex: 1; padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .step.active { border-bottom-color: var(--gold); }
+  .step.done { border-bottom-color: var(--nile); }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--border); color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .step.active .step-num { background: var(--gold); color: var(--dark); }
+  .step.done .step-num { background: var(--nile); color: var(--white); }
+  .step-label { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .step.active .step-label { color: var(--dark); }
+
+  .form-section { margin-bottom: 36px; }
+  .form-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 600; color: var(--dark);
+    margin-bottom: 20px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1/-1; }
+  label { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; }
+  input, select, textarea {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--dark);
+    transition: border-color 0.2s; outline: none;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+  textarea { height: 80px; resize: vertical; }
+
+  .date-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 6px; }
+  .cal-day {
+    aspect-ratio: 1; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--white); display: flex; align-items: center;
+    justify-content: center; font-size: 12px; cursor: pointer; transition: all 0.2s;
+    color: var(--dark);
+  }
+  .cal-day:hover { border-color: var(--gold); color: var(--gold); }
+  .cal-day.selected { background: var(--gold); border-color: var(--gold); color: var(--dark); font-weight: 700; }
+  .cal-day.unavail { background: var(--sand); color: var(--muted); cursor: default; opacity: 0.5; }
+  .cal-header { font-size: 10px; font-weight: 700; color: var(--muted); text-align: center; }
+
+  .aside-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 1px solid rgba(200,150,62,0.2);
+  }
+  .aside-title span { color: var(--gold); font-style: italic; }
+  .summary-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 14px; font-size: 13px;
+  }
+  .summary-row .key { color: rgba(255,255,255,0.5); }
+  .summary-row .val { color: var(--white); font-weight: 500; text-align: right; max-width: 180px; }
+  .summary-divider { border: none; border-top: 1px solid rgba(200,150,62,0.2); margin: 18px 0; }
+  .summary-total { display: flex; justify-content: space-between; align-items: center; }
+  .summary-total .key { color: rgba(255,255,255,0.7); font-weight: 600; font-size: 14px; }
+  .summary-total .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; color: var(--gold); font-weight: 600;
+  }
+  .aside-note { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5; margin-top: 14px; }
+
+  /* ── SCREEN 4: GUIDE ASSIGNMENT ── */
+  .guide-layout { padding: 48px 80px; }
+  .guide-layout h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px; font-weight: 300; margin-bottom: 6px;
+  }
+  .guide-layout h2 em { color: var(--gold); font-style: italic; }
+  .guide-layout > p { color: var(--muted); font-size: 14px; margin-bottom: 32px; }
+
+  .guide-filters { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+
+  .guides-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .guide-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; text-align: center;
+    box-shadow: var(--shadow); transition: all 0.3s; cursor: pointer;
+  }
+  .guide-card:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(26,18,8,0.14); }
+  .guide-card.selected {
+    border-color: var(--gold); background: linear-gradient(135deg, #FFF9F0, var(--white));
+    box-shadow: 0 0 0 2px var(--gold), 0 14px 40px rgba(200,150,62,0.2);
+  }
+  .guide-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--terr));
+    margin: 0 auto 14px; display: flex; align-items: center;
+    justify-content: center; font-size: 24px; color: var(--white);
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  }
+  .guide-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 600; margin-bottom: 4px;
+  }
+  .guide-spec { font-size: 11px; color: var(--terr); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .guide-langs { display: flex; justify-content: center; gap: 6px; margin-bottom: 12px; }
+  .lang-tag {
+    background: var(--sand); border-radius: 4px;
+    padding: 2px 8px; font-size: 11px; font-weight: 600; color: var(--brown);
+  }
+  .guide-rating { font-size: 13px; color: var(--gold); margin-bottom: 12px; }
+  .guide-rating span { color: var(--muted); font-size: 12px; }
+  .guide-avail { font-size: 11px; color: var(--nile); font-weight: 600; }
+  .guide-cert { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .guide-select-btn {
+    margin-top: 14px; width: 100%;
+    background: var(--sand); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 8px;
+    font-size: 12px; font-weight: 600; color: var(--brown); cursor: pointer; transition: all 0.2s;
+  }
+  .guide-card.selected .guide-select-btn { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+  .guide-select-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+
+  /* ── SCREEN 5: ADMIN DASHBOARD ── */
+  .admin-layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 60px); }
+  .admin-sidebar {
+    background: var(--dark); padding: 32px 20px;
+    border-right: 1px solid rgba(200,150,62,0.15);
+  }
+  .sidebar-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    padding: 0 12px; margin-bottom: 8px; margin-top: 20px;
+  }
+  .sidebar-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border-radius: var(--r);
+    font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.55);
+    cursor: pointer; transition: all 0.2s; margin-bottom: 2px;
+  }
+  .sidebar-item:hover { background: rgba(200,150,62,0.1); color: var(--gold-lt); }
+  .sidebar-item.active { background: rgba(200,150,62,0.15); color: var(--gold); }
+  .sidebar-icon { font-size: 15px; }
+
+  .admin-main { background: var(--cream); padding: 40px; overflow-y: auto; }
+  .admin-topbar {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;
+  }
+  .admin-topbar h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 400; color: var(--dark);
+  }
+  .admin-topbar h2 em { color: var(--gold); font-style: italic; }
+  .admin-date { font-size: 13px; color: var(--muted); }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 32px; }
+  .kpi-card {
+    background: var(--white); border-radius: 10px;
+    padding: 22px 24px; border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(26,18,8,0.06);
+  }
+  .kpi-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 8px; }
+  .kpi-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 600; color: var(--dark); line-height: 1;
+  }
+  .kpi-change { font-size: 12px; margin-top: 6px; font-weight: 500; }
+  .kpi-change.up { color: #2E7D52; }
+  .kpi-change.neutral { color: var(--muted); }
+
+  .admin-grid { display: grid; grid-template-columns: 1fr 340px; gap: 20px; }
+  .admin-card {
+    background: var(--white); border-radius: 10px;
+    border: 1px solid var(--border); overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,18,8,0.06);
+  }
+  .admin-card-header {
+    padding: 18px 24px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .admin-card-header h4 { font-size: 14px; font-weight: 600; color: var(--dark); }
+  .view-all { font-size: 12px; color: var(--gold); font-weight: 600; cursor: pointer; }
+
+  .bookings-table { width: 100%; border-collapse: collapse; }
+  .bookings-table th {
+    padding: 10px 24px; text-align: left;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+    background: var(--sand); border-bottom: 1px solid var(--border);
+  }
+  .bookings-table td {
+    padding: 13px 24px; font-size: 13px;
+    border-bottom: 1px solid rgba(200,150,62,0.1);
+  }
+  .bookings-table tr:last-child td { border-bottom: none; }
+  .status-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 600;
+  }
+  .status-badge.confirmed { background: #E8F5EE; color: #2E7D52; }
+  .status-badge.pending   { background: #FEF3E2; color: #C07B1A; }
+  .status-badge.cancelled { background: #FEE8E8; color: #B91C1C; }
+
+  .activity-list { padding: 0; }
+  .activity-item {
+    padding: 14px 24px; border-bottom: 1px solid rgba(200,150,62,0.1);
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .activity-item:last-child { border-bottom: none; }
+  .activity-dot {
+    width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0;
+  }
+  .activity-dot.gold { background: var(--gold); }
+  .activity-dot.blue { background: var(--nile); }
+  .activity-dot.green { background: #2E7D52; }
+  .activity-text { font-size: 13px; color: var(--dark); line-height: 1.4; }
+  .activity-time { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    background: var(--dark); color: var(--white);
+    padding: 14px 20px; border-radius: 8px; font-size: 13px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transform: translateY(80px); opacity: 0;
+    transition: all 0.3s; max-width: 300px;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* RESPONSIVE tweaks */
+  @media (max-width: 900px) {
+    .catalogue-grid { grid-template-columns: 1fr 1fr; padding: 24px; }
+    .guides-grid { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 20px; }
+    .hero-content { padding: 0 32px; }
+    .hero h1 { font-size: 48px; }
+    .hero-right { display: none; }
+    .booking-layout { grid-template-columns: 1fr; }
+    .admin-layout { grid-template-columns: 1fr; }
+    .admin-sidebar { display: none; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .admin-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── RTL / Arabic support ── */
+  [lang="ar"] body,
+  body.ar {
+    font-family: 'Noto Naskh Arabic', 'DM Sans', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  body.ar nav { flex-direction: row-reverse; }
+  body.ar .nav-tabs { flex-direction: row-reverse; }
+  body.ar .hero-content { padding: 0 80px 0 0; }
+  body.ar .hero-right  { left: 0; right: auto; }
+  body.ar .hero-stats  { left: auto; right: 80px; }
+  body.ar .filters-bar { flex-direction: row-reverse; }
+  body.ar .tile-footer { flex-direction: row-reverse; }
+  body.ar .tile-meta   { flex-direction: row-reverse; }
+  body.ar .booking-layout { direction: rtl; }
+  body.ar .form-grid   { direction: rtl; }
+  body.ar .steps-bar   { flex-direction: row-reverse; }
+  body.ar .guide-filters { flex-direction: row-reverse; }
+  body.ar .admin-layout { direction: rtl; }
+  body.ar .admin-topbar { flex-direction: row-reverse; }
+  body.ar .kpi-grid    { direction: rtl; }
+  body.ar .admin-grid  { direction: rtl; }
+  body.ar .admin-card-header { flex-direction: row-reverse; }
+  body.ar .bookings-table th,
+  body.ar .bookings-table td { text-align: right; }
+  body.ar .summary-row { flex-direction: row-reverse; }
+  body.ar .summary-total { flex-direction: row-reverse; }
+  body.ar .aside-title { text-align: right; }
+  body.ar .page-header { text-align: right; }
+  body.ar .guide-layout { text-align: right; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
   <div class="nav-logo"><span data-de="ETEP" data-ar="بوابة ETEP">ETEP</span> <span data-de="/ Egypt Tourism Excursion Portal" data-ar="/ البوابة السياحية المصرية">/ Egypt Tourism Excursion Portal</span></div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showScreen('home')"><span data-de="Home" data-ar="الرئيسية">Home</span></button>
